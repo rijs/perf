@@ -22,7 +22,7 @@ describe('Perf', function(){
     document.body.removeChild(container)
   })
 
-  it('should ', function(){  
+  it('should run fn and log output', function(){  
     var ripple = perf(components(fn(core())))
       , result
 

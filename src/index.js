@@ -11,7 +11,7 @@ export default function precss(ripple){
 function render(ripple) {
   return function(next) {
     return function(el) {
-      return perf(next, 'render ' + lo(el.nodeName)).apply(this, arguments)
+      return group('render ' + lo(el.nodeName) + ' ' + (el.count = el.count || 0, ++el.count), d => perf(next)(el))
     }
   }
 }

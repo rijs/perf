@@ -37,7 +37,9 @@ function precss(ripple) {
 function render(ripple) {
   return function (next) {
     return function (el) {
-      return (0, _perf2.default)(next, 'render ' + (0, _lo2.default)(el.nodeName)).apply(this, arguments);
+      return group('render ' + (0, _lo2.default)(el.nodeName) + ' ' + (el.count = el.count || 0, ++el.count), function (d) {
+        return (0, _perf2.default)(next)(el);
+      });
     };
   };
 }
