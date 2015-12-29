@@ -14,7 +14,7 @@ describe('Perf', function(){
   
   beforeEach(function(done){
     container.innerHTML = '<css-1></css-1>'
-    el = container.children[1]
+    el = container.children[0]
     time(50, done)
   })
 
@@ -27,7 +27,7 @@ describe('Perf', function(){
       , result
 
     ripple('css-1', function(){ result = true })
-    ripple.draw()
+    ripple.render(el)
 
     expect(result).to.be.ok
   })

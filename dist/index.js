@@ -30,18 +30,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function precss(ripple) {
   if (!_client2.default) return;
   log('creating');
-  ripple.render = render(ripple)(ripple.render);
+  ripple.render = render(ripple.render);
   return ripple;
 }
 
-function render(ripple) {
-  return function (next) {
-    return function (el) {
-      return group('render ' + (0, _lo2.default)(el.nodeName) + ' ' + (el.count = el.count || 0, ++el.count), function (d) {
-        return (0, _perf2.default)(next)(el);
-      });
-    };
+var render = function render(next) {
+  return function (el) {
+    return group('render ' + (0, _lo2.default)(el.nodeName) + ' ' + (el.count = el.count || 0, ++el.count), function (d) {
+      return (0, _perf2.default)(next)(el);
+    });
   };
-}
+};
 
 var log = require('utilise/log')('[ri/perf]');
