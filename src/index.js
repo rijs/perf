@@ -1,7 +1,7 @@
 // -------------------------------------------
-// API: Pre-applies Scoped CSS [css=name]
+// Logs Every Render in Console
 // -------------------------------------------
-export default function precss(ripple){
+export default function instrument(ripple){
   if (!client) return;
   log('creating')
   ripple.render = render(ripple.render)

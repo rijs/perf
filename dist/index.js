@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = precss;
+exports.default = instrument;
 
 var _identity = require('utilise/identity');
 
@@ -25,9 +25,9 @@ var _lo2 = _interopRequireDefault(_lo);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // -------------------------------------------
-// API: Pre-applies Scoped CSS [css=name]
+// Logs Every Render in Console
 // -------------------------------------------
-function precss(ripple) {
+function instrument(ripple) {
   if (!_client2.default) return;
   log('creating');
   ripple.render = render(ripple.render);
